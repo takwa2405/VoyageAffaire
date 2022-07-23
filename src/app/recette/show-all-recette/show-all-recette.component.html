@@ -1,0 +1,94 @@
+
+<div class="new_arrivals">
+  <div class="container">
+    <div class="row">
+      <div class="col text-center">
+        <div class="section_title new_arrivals_title">
+          <h2 style="color: orange">My Food's recette</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="row align-items-center">
+      <div class="col text-center">
+        <div class="new_arrivals_sorting">
+
+        </div>
+      </div>
+    </div>
+
+
+    <br>
+    *** vous pouvez Faire votre recherches içi ***
+    <br>
+    Choisissez une recherche par son nom ou par des ingredients disponible chez vous
+<br>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+       <input class="form-control" type="text" name="libellee" [(ngModel)]="libellee" (ngModelChange)="rechercher()"
+             placeholder="libellé recette" >
+        </div>
+
+        <div class="col">
+      <input class="form-control" type="text" name="ing11" [(ngModel)]="ing11" (ngModelChange)="rechIng()"
+             placeholder="Ingrédient 1" >
+        </div>
+      </div>
+
+      <br>
+      <div class="row">
+        <div class="col">
+          <input class="form-control" type="text" name="ing22" [(ngModel)]="ing22" (ngModelChange)="rechIng()"
+                 placeholder="Ingrédient 2"  >
+        </div>
+
+        <div class="col">
+          <input class="form-control" type="text" name="ing33" [(ngModel)]="ing33" (ngModelChange)="rechIng()"
+                 placeholder="Ingrédient 3" >
+        </div>
+      </div>
+
+
+      <br>
+      <div class="row">
+        <div class="col">
+          <input class="form-control" type="text" name="ing44" [(ngModel)]="ing44" (ngModelChange)="rechIng()"
+                 placeholder="Ingrédient 4"  >
+        </div>
+
+        <div class="col">
+          <input class="form-control" type="text" name="ing55" [(ngModel)]="ing55" (ngModelChange)="rechIng()"
+                 placeholder="Ingrédient 5" >
+        </div>
+      </div>
+
+
+      <br>
+    <div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
+
+      <div class="row">
+        <div class="col-lg-4 col-md-6 mb-4" *ngFor="let recette of recetteList">
+          <div class="card h-100">
+            <img src={{recette.image}} alt="rover" />
+             <div class="card-body">
+              <div class="col text-center">
+                <h2 class="card-title">
+                  {{ recette.libelle }}
+                </h2>
+              </div>
+              <h4>{{ recette.description }}</h4>
+              <p> <a [routerLink]= "['/ShowRecetteComponent/', recette.id]" > <i class="fa fa-angle-double-right"></i> Voir plus</a>
+              </p>
+
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>

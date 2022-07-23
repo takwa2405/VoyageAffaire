@@ -1,0 +1,36 @@
+
+<form>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Title</label>
+        <input type="email" [(ngModel)]="title"  class="form-control" 
+        [ngModelOptions]="{standalone: true}" placeholder="title">
+        <small id="emailHelp" class="form-text text-muted">
+            We'll never share your email with anyone else.</small>
+      </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">contenue</label>
+      <textarea [(ngModel)]="contenue" type="email" rows="5" class="form-control" [ngModelOptions]="{standalone: true}"
+      placeholder="contenue..."></textarea>
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="add()">Add</button>
+
+    
+  </form>
+
+
+<div class="row">
+
+      <div class="card col-4" *ngFor="let item of listPost">
+        <img class="card-img-top" src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">{{item.contenue}}</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Last updated 3 mins ago</small>
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="delete(item.idPublication)">delete</button>
+      </div>
+</div>
+
