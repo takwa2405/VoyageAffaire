@@ -6,7 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  isConnected: boolean = false;
-  title = 'MyFood';
-
+  title = 'piFront';
 }
